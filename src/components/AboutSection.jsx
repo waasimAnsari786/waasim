@@ -12,7 +12,9 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: Background Video */}
-          <div className="relative h-80 md:h-full"></div>
+          <div className="relative h-80 md:h-full">
+            <img src="/img/about-gif.gif" className='w-full h-full' alt="about gif" />
+          </div>
 
           {/* Column 2: Text Content */}
           <div className="flex flex-col justify-center">

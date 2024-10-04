@@ -57,3 +57,10 @@ body {
     content: "Crafting beautiful, responsive websites.";
   }
 }
+
+.hero-sec {
+  background-image: url(../public/img/hero-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

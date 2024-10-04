@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-gray-800 text-white w-full z-20 transition-all duration-300 fixed top-0 ${isBlurred ? "backdrop-blur-md" : ""
+      className={`bg-slate-800 text-white w-full z-20 transition-all duration-300 fixed top-0 ${isBlurred ? "backdrop-blur-md" : ""
         }`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">

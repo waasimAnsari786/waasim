@@ -5,7 +5,6 @@ export default function QualificationInner({
   title,
   subtitle,
   description,
-  description2,
   compKey,
 }) {
   return (
@@ -18,9 +17,9 @@ export default function QualificationInner({
           myClass="text-2xl font-semibold text-slate-800 mb-2 capitalize"
           myText={title}
         />
-        <Text myClass="text-gray-600 font-semibold mb-4" myText={subtitle} />
+        <Text myClass="text-gray-600 font-semibold text-lg mb-4" myText={subtitle} />
 
-        <Text myClass="text-gray-500 mt-3" myText={description} />
+        <Text myClass="text-gray-500 text-lg" myText={description} />
       </div>
     </>
   );

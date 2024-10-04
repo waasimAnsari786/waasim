@@ -27,7 +27,7 @@ const ContactForm = () => {
         <div className="w-full md:w-1/3">
           {contacts.map((curObj) => {
             return (
-              <a href={curObj.URL} key={curObj.id}>
+              <a href={curObj.URL} key={curObj.id} target="_blank">
                 <div className="bg-white rounded-lg p-6 w-full flex flex-col flex-wrap justify-center items-center border-[0.1rem] border-slate-300 mb-2">
                   {curObj.icon}
                   <p className="text-slate-800 text-xl font-medium">

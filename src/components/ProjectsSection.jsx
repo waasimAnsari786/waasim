@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useId } from 'react';
+import MyButton from './MyButton';
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -6,27 +7,36 @@ const ProjectsSection = () => {
   // Sample project data (you can replace with your own)
   const projects = [
     {
-      id: 1,
+
       title: 'HTML/CSS Project',
       description: 'A beautiful and responsive webpage built with HTML and CSS.',
       category: 'HTML/CSS',
       image: '/img/project1.png', // example image path
+      id: useId()
     },
     {
-      id: 2,
+
       title: 'JavaScript Project',
       description: 'A dynamic JavaScript project showcasing DOM manipulation.',
       category: 'JavaScript',
       image: '/img/project2.png',
+      id: useId()
     },
     {
-      id: 3,
+
       title: 'React Project',
       description: 'A feature-rich React app with state management and routing.',
       category: 'React',
       image: '/img/project3.png',
+      id: useId()
     },
   ];
+
+  let btns = ['All', 'HTML/CSS', 'JavaScript', 'React']
+
+  const handleProjectsFilter = (val) => {
+    setSelectedCategory(val.target.textContent)
+  }
 
   // Filter logic based on selected category
   const filteredProjects = projects.filter(project =>
@@ -41,34 +51,13 @@ const ProjectsSection = () => {
 
         {/* Button Section */}
         <div className="flex justify-center space-x-4 mb-12">
-          <button
-            onClick={() => setSelectedCategory('All')}
-            className={`py-2 px-4 rounded-md font-semibold transition ${selectedCategory === 'All' ? 'bg-slate-800 text-white' : 'bg-gray-200 text-gray-700'
-              }`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setSelectedCategory('HTML/CSS')}
-            className={`py-2 px-4 rounded-md font-semibold transition ${selectedCategory === 'HTML/CSS' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
-              }`}
-          >
-            HTML/CSS
-          </button>
-          <button
-            onClick={() => setSelectedCategory('JavaScript')}
-            className={`py-2 px-4 rounded-md font-semibold transition ${selectedCategory === 'JavaScript' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
-              }`}
-          >
-            JavaScript
-          </button>
-          <button
-            onClick={() => setSelectedCategory('React')}
-            className={`py-2 px-4 rounded-md font-semibold transition ${selectedCategory === 'React' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
-              }`}
-          >
-            React
-          </button>
+          {
+            btns.map((curBtn) => {
+              return (
+                <MyButton btnText={curBtn} btnClass={`py-2 px-4 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear rounded-md font-semibold transition ${selectedCategory === curBtn ? 'bg-slate-800 text-white' : 'bg-slate-300 text-gray-700'}`} btnFunc={handleProjectsFilter} />
+              )
+            })
+          }
         </div>
 
         {/* Project Cards */}
@@ -83,7 +72,7 @@ const ProjectsSection = () => {
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <button className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition">
+                <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
                   View Project
                 </button>
               </div>

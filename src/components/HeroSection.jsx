@@ -2,9 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen w-full">
-
-
+    <section className="relative h-screen w-full hero-sec">
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
 

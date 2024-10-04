@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId, useState } from "react";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
@@ -6,8 +6,10 @@ import SkillsSection from "./SkillsSection";
 import ContactForm from "./ContactForm";
 import ProjectsSection from "./ProjectsSection";
 import QualificationSection from "./QualificationSection";
+import MyButton from "./MyButton";
 
 export default function MyPortfolio() {
+  // i created these 2 arrays for printing my qualifications and experience
   const qualification = [
     {
       title: "matriculation",
@@ -41,6 +43,12 @@ export default function MyPortfolio() {
     },
   ];
 
+  // state for handling targeted click on qualification and experience buttons
+  const [QuaExp, setQuaExp] = useState(qualification)
+  const handleQuaExp = (val) => {
+    val.target.textContent === 'qualification' ? setQuaExp(qualification) : setQuaExp(experience)
+  }
+
   return (
     <>
       <Header />
@@ -48,13 +56,15 @@ export default function MyPortfolio() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <section className="bg-gray-100">
-        <div className="container mx-auto flex flex-col lg:flex-row gap-5 lg:gap-3">
+      <section className="bg-gray-100 pb-10">
+        <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3">
+          <div className="w-full flex justify-center gap-6">
+            <MyButton btnText='qualification' btnClass='text-3xl text-center text-slate-800 capitalize font-bold mb-5' btnFunc={handleQuaExp} />
+            <MyButton btnText='experience' btnClass='text-3xl text-center text-slate-800 capitalize font-bold mb-5' btnFunc={handleQuaExp} />
+          </div>
           <QualificationSection
-            quaArr={qualification}
-            quaHead={"qualification"}
+            quaArr={QuaExp}
           />
-          <QualificationSection quaArr={experience} quaHead={"experience"} />
         </div>
       </section>
 
