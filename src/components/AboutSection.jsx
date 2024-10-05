@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FaDownload } from 'react-icons/fa'; // Import the download icon
 import Text from './Text';
 import MyButton from './MyButton';
+import Lottie from 'lottie-react'
+import animationData from '../assets/Animation - 1728127935830.json'
 
 
 const AboutSection = () => {
+  const aniRef = useRef(null)
+
   return (
     <section className="w-full flex items-center justify-center text-gray-800" id='my-ab'>
       <div className="container mx-auto px-6 py-12">
         <Text myClass='text-4xl font-bold mb-8 text-center capitalize' myText='about me' />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Column 1: Background Video */}
-          <div className="relative h-80 md:h-full">
+          <Lottie
+            lottieRef={aniRef}  // Connect the reference to Lottie
+            animationData={animationData}
+          />
+          {/* <div className="relative h-80 md:h-full">
             <img src="/img/about-gif.gif" className='w-full h-full' alt="about gif" />
-          </div>
+          </div> */}
 
           {/* Column 2: Text Content */}
           <div className="flex flex-col justify-center">

@@ -59,7 +59,7 @@ body {
 }
 
 .hero-sec {
-  background-image: url(../public/img/hero-img.jpg);
+  background-image: url(../img/hero-img.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

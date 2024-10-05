@@ -1,5 +1,4 @@
-import React from "react";
-import Text from "./Text";
+import React, { useId } from "react";
 import QualificationInner from "./QualificationInner";
 
 const QualificationSection = ({ quaArr }) => {
@@ -9,6 +8,7 @@ const QualificationSection = ({ quaArr }) => {
         {quaArr.map((curObj) => {
           return (
             <QualificationInner
+              key={useId()}
               title={curObj.title}
               subtitle={curObj.year}
               description={curObj.description}

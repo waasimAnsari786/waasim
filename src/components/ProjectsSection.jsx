@@ -54,7 +54,7 @@ const ProjectsSection = () => {
           {
             btns.map((curBtn) => {
               return (
-                <MyButton btnText={curBtn} btnClass={`py-2 px-4 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear rounded-md font-semibold transition ${selectedCategory === curBtn ? 'bg-slate-800 text-white' : 'bg-slate-300 text-gray-700'}`} btnFunc={handleProjectsFilter} />
+                <MyButton btnText={curBtn} btnClass={`py-2 px-4 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear rounded-md font-semibold transition ${selectedCategory === curBtn ? 'bg-slate-800 text-white' : 'bg-slate-300 text-gray-700'}`} btnFunc={handleProjectsFilter} key={useId()} />
               )
             })
           }

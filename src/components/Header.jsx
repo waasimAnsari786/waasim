@@ -4,9 +4,8 @@ import Text from "./Text";
 const Header = () => {
   // State to toggle the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [NewClass, setNewClass] = useState("");
 
-  // State to handle header blur on scroll
+  // State to handle header blur and logo size on scroll
   const [isBlurred, setIsBlurred] = useState(false);
 
   // Scroll to specific section
@@ -19,7 +18,7 @@ const Header = () => {
 
   // Function to handle the scroll event for the blur effect
   const handleScrollEffect = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 150) {
       setIsBlurred(true);
     } else {
       setIsBlurred(false);
@@ -43,14 +42,24 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-slate-800 text-white w-full z-20 transition-all duration-300 fixed top-0 ${isBlurred ? "backdrop-blur-md" : ""
+      className={`text-white w-full z-20 transition-all duration-300 ease-linear fixed top-0 ${isBlurred
+        ? "backdrop-blur-md bg-slate-800/60" // Transparent with blur effect
+        : "bg-slate-800" // Solid background
         }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center p-4 transition-all duration-300 ease-linear">
         {/* Logo/Name */}
-        <div className={`text-2xl font-bold ${NewClass}`}>
-          <a href="#" className="text-white hover:text-gray-300">
-            <img src="/img/download.png" alt="Logo" />
+        <div
+          className={`text-2xl font-bold transition-all duration-300 ease-linear ${isBlurred ? "h-10" : "h-16"
+            }`} // Reduces logo height on scroll
+        >
+          <a href="#">
+            <img
+              src="/img/download.png"
+              alt="Logo"
+              className={`transition-all duration-300 ease-linear ${isBlurred ? "h-10" : "h-16"
+                }`} // Shrinks the logo on scroll
+            />
           </a>
         </div>
 
@@ -90,9 +99,7 @@ const Header = () => {
             />
           </button>
 
-
           <button
-
             onClick={() => {
               handleScroll("my-skills");
             }}
@@ -103,7 +110,6 @@ const Header = () => {
               }
               myText={"skills"}
             />
-
           </button>
           <button
             onClick={() => {
@@ -135,10 +141,7 @@ const Header = () => {
       {/* Mobile Navigation (visible when the hamburger menu is clicked) */}
       {isMobileMenuOpen && (
         <nav className="md:hidden bg-gray-700 p-4">
-          <a
-            href="#about"
-            className="block text-white py-2 hover:text-gray-300"
-          >
+          <a href="#about" className="block text-white py-2 hover:text-gray-300">
             About
           </a>
           <a
