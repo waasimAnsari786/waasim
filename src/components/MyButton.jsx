@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-export default function MyButton({ btnText, btnClass, btnFunc }) {
+export default function MyButton({ btnText, btnClass, btnFunc, btnAni }) {
   return (
     <>
-      <button className={btnClass} onClick={(e) => { btnFunc && btnFunc(e) }}>{btnText}</button>
+      <button
+        className={btnClass}
+        onClick={(e) => {
+          btnFunc && btnFunc(e);
+        }}
+        data-aos={btnAni}
+      >
+        {btnText}
+      </button>
     </>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import QualificationInner from "./QualificationInner";
 
 const QualificationSection = ({ quaArr }) => {
   return (
-    <div className="w-full lg:w-1/2">
+    <div className="w-full lg:w-1/2" data-aos="fade-up">
       <div className="flex md:flex-row flex-col gap-2">
         {quaArr.map((curObj) => {
           return (

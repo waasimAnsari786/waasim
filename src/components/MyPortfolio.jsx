@@ -1,4 +1,4 @@
-import React, { useId, useState } from "react";
+import React, { useId, useState, useEffect } from "react";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
@@ -7,8 +7,17 @@ import ContactForm from "./ContactForm";
 import ProjectsSection from "./ProjectsSection";
 import QualificationSection from "./QualificationSection";
 import MyButton from "./MyButton";
+import AOS from "aos";
+import MySlider from "./MySlider";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 export default function MyPortfolio() {
+  const router = createBrowserRouter([
+    {
+      path: "/projects",
+      element: <ProjectsSection />,
+    },
+  ]);
   // i created these 2 arrays for printing my qualifications and experience
   const qualification = [
     {
@@ -44,10 +53,20 @@ export default function MyPortfolio() {
   ];
 
   // state for handling targeted click on qualification and experience buttons
-  const [QuaExp, setQuaExp] = useState(qualification)
+  const [QuaExp, setQuaExp] = useState(qualification);
   const handleQuaExp = (val) => {
-    val.target.textContent === 'qualification' ? setQuaExp(qualification) : setQuaExp(experience)
-  }
+    val.target.textContent === "qualification"
+      ? setQuaExp(qualification)
+      : setQuaExp(experience);
+  };
+
+  let arr1 = [1, 2, 3];
+  let arr2 = [4, 5, 6, 7];
+  let arr3 = [8, 9, 10, 11, 15];
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>
@@ -55,16 +74,28 @@ export default function MyPortfolio() {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
-      <ProjectsSection />
+      <RouterProvider router={router} />
+      <div className="container mx-auto grid grid-cols-3">
+        <MySlider sliderEffect="creative" sliderDataArr={arr2} />
+        <MySlider sliderEffect="cards" sliderDataArr={arr1} />
+        <MySlider sliderEffect="cube" sliderDataArr={arr3} />
+      </div>
+
       <section className="bg-gray-100 pb-10">
         <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3">
           <div className="w-full flex justify-center gap-6">
-            <MyButton btnText='qualification' btnClass='text-3xl text-center text-slate-800 capitalize font-bold mb-5' btnFunc={handleQuaExp} />
-            <MyButton btnText='experience' btnClass='text-3xl text-center text-slate-800 capitalize font-bold mb-5' btnFunc={handleQuaExp} />
+            <MyButton
+              btnText="qualification"
+              btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
+              btnFunc={handleQuaExp}
+            />
+            <MyButton
+              btnText="experience"
+              btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
+              btnFunc={handleQuaExp}
+            />
           </div>
-          <QualificationSection
-            quaArr={QuaExp}
-          />
+          <QualificationSection quaArr={QuaExp} />
         </div>
       </section>
 

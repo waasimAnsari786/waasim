@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa"; // Import icons from React Icons
 import { SiTailwindcss, SiRedux } from "react-icons/si"; // Additional Icons
 import Text from "./Text";
+import { useElementsRef } from "../context/MainContext";
 
 // Skill data
 const skillsColumnOne = [
@@ -33,8 +34,8 @@ const skillsColumnOne = [
   },
 ];
 
-
 const SkillsSection = () => {
+  const { skillsRef } = useElementsRef();
   const id = useId(); // Generate a unique ID
 
   // Function to render skills in each column
@@ -44,32 +45,35 @@ const SkillsSection = () => {
         {skills.map((skill) => (
           <li
             key={`${id}-${skill.name}`}
-            className='p-4 w-28 md:w-40 flex flex-col items-center bg-slate-800 text-white rounded-lg m-2'
+            className="p-4 w-28 md:w-40 flex flex-col items-center bg-slate-800 text-white rounded-lg m-2"
+            data-aos="zoom-in"
           >
             {/* Skill Icon */}
             {skill.icon}
 
             {/* Skill Name */}
-            <span className="text-xl text-center font-semibold">{skill.name}</span>
+            <span className="text-xl text-center font-semibold">
+              {skill.name}
+            </span>
           </li>
-        ))
-        }
-      </ul >
+        ))}
+      </ul>
     );
   };
 
   return (
-    <section className="w-full py-12 text-slate-800" id="my-skills">
+    <section
+      className="w-full py-12 text-slate-800"
+      id="my-skills"
+      ref={skillsRef}
+    >
       <div className="container mx-auto px-6">
         <Text
           myClass="text-4xl font-bold mb-8 text-center capitalize"
           myText="skills"
         />
 
-
-
         <div>{renderSkills(skillsColumnOne)}</div>
-
       </div>
     </section>
   );

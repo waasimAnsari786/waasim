@@ -1,16 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import animationData from "../assets/Animation - 1728127935830.json"; // Import your Lottie animation file
 
 const HeroSection = () => {
-  return (
-    <section className="relative h-screen w-full hero-sec">
-      {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
-      {/* Typing Text Animation */}
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className='text-white text-4xl md:text-6xl font-bold text-center'>
-          <span className="typewriter py-2"></span>
-        </h1>
+  const lines = [
+    "Passionate Web Developer!",
+    "Tech Enthusiast!",
+    "Quick Learner!",
+  ];
+
+  useEffect(() => {
+    const typingSpeed = 100; // Speed of typing each character
+    const delayBetweenLines = 1000; // Delay before starting to delete
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing phase
+        if (charIndex < lines[currentLineIndex].length) {
+          setText((prevText) => prevText + lines[currentLineIndex][charIndex]);
+          setCharIndex((prevCharIndex) => prevCharIndex + 1);
+        } else if (charIndex === lines[currentLineIndex].length) {
+          setTimeout(() => setIsDeleting(true), delayBetweenLines);
+        }
+      } else {
+        // Deleting phase
+        if (charIndex > 0) {
+          setText((prevText) => prevText.slice(0, -1));
+          setCharIndex((prevCharIndex) => prevCharIndex - 1);
+        } else if (charIndex === 0) {
+          setIsDeleting(false);
+          setCurrentLineIndex(
+            (prevLineIndex) => (prevLineIndex + 1) % lines.length
+          ); // Move to next line in a loop
+        }
+      }
+    };
+
+    const interval = setInterval(handleTyping, typingSpeed);
+    return () => clearInterval(interval);
+  }, [charIndex, isDeleting, currentLineIndex]);
+
+  return (
+    <section className="w-full flex items-center justify-center text-slate-800">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between p-8">
+        {/* First child: Typing text content */}
+        <div className="flex-1 text-left md:pr-8" data-aos="fade-in-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Hello, I'm Waasim Ansari!
+          </h1>
+          <p
+            className="text-2xl font-semibold leading-relaxed"
+            style={{ whiteSpace: "pre-wrap", minHeight: "3.5rem" }} // Fixed height for the container
+          >
+            {text}
+          </p>
+        </div>
+
+        {/* Second child: Lottie animation */}
+        <div className="flex-1 w-full h-full" data-aos="fade-in-down">
+          <Lottie
+            animationData={animationData}
+            loop={true}
+            autoplay={true}
+            className="max-w-sm mx-auto"
+          />
+        </div>
       </div>
     </section>
   );
