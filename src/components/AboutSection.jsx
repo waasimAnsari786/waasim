@@ -49,15 +49,13 @@ const AboutSection = () => {
 
             <p className="text-lg text-gray-700 mb-4">
               With <strong>1 year of experience working from home</strong>, I
-              have
-              <strong>not worked in any formal organization</strong>. Instead,
-              I've gained all of my experience through
+              have <strong>not worked in any formal organization</strong>.
+              Instead, I've gained all of my experience through{" "}
               <strong>self-learning</strong> and developing several projects by
-              following tutorials on
-              <strong>YouTube</strong> and other online platforms. My journey
-              has been fueled by my drive to constantly learn and grow,
-              exploring new technologies that have the potential to shape the
-              future of the web and beyond.
+              following tutorials on <strong>YouTube</strong> and other online
+              platforms. My journey has been fueled by my drive to constantly
+              learn and grow, exploring new technologies that have the potential
+              to shape the future of the web and beyond.{" "}
             </p>
 
             <p className="text-lg text-gray-700 mb-6">

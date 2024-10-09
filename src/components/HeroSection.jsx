@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import animationData from "../assets/Animation - 1728127935830.json"; // Import your Lottie animation file
 
 const HeroSection = () => {
@@ -49,7 +51,7 @@ const HeroSection = () => {
     <section className="w-full flex items-center justify-center text-slate-800">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between p-8">
         {/* First child: Typing text content */}
-        <div className="flex-1 text-left md:pr-8" data-aos="fade-in-up">
+        <div className="flex-1 text-left md:pr-8" data-aos="fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Hello, I'm Waasim Ansari!
           </h1>
@@ -59,10 +61,25 @@ const HeroSection = () => {
           >
             {text}
           </p>
+
+          <div className="flex space-x-3 text-2xl">
+            <a
+              href=""
+              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 md:p-2 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href=""
+              className="rounded-full bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
+            >
+              <FaGithub />
+            </a>
+          </div>
         </div>
 
         {/* Second child: Lottie animation */}
-        <div className="flex-1 w-full h-full" data-aos="fade-in-down">
+        <div className="flex-1 w-full h-full" data-aos="fade-down">
           <Lottie
             animationData={animationData}
             loop={true}

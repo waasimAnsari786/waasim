@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useId } from "react";
 import MyButton from "./MyButton";
 import { useElementsRef } from "../context/MainContext";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const { aboutRef, skillsRef, projectsRef, contactRef } = useElementsRef();
@@ -11,13 +12,14 @@ const Header = () => {
   // Scroll to specific section
   const handleScroll = (obj) => {
     let targetedText = obj.target.textContent;
+    document.title = `Waasim's Portfolio - ${targetedText.toUpperCase()}`;
     if (targetedText === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (targetedText === "skills") {
       skillsRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (targetedText === "projects") {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (targetedText === "contact me") {
+    } else if (targetedText === "contact") {
       contactRef.current.scrollIntoView({ behavior: "smooth" });
     }
     // Close the mobile menu after clicking a link
@@ -48,7 +50,7 @@ const Header = () => {
     };
   }, []);
 
-  let btns = ["about", "skills", "projects", "contact me"];
+  let btns = ["about", "skills", "projects", "contact"];
 
   return (
     <header
@@ -65,7 +67,7 @@ const Header = () => {
             isBlurred ? "h-10" : "h-16"
           }`} // Reduces logo height on scroll
         >
-          <a href="#">
+          <Link to="/">
             <img
               src="/img/download.png"
               alt="Logo"
@@ -73,7 +75,7 @@ const Header = () => {
                 isBlurred ? "h-10" : "h-16"
               }`} // Shrinks the logo on scroll
             />
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger Menu (visible on small screens) */}
@@ -126,15 +128,26 @@ const Header = () => {
 
           {/* Navigation Links */}
           <ul className="space-y-4 mt-10">
-            {btns.map((curBtn) => {
-              return (
-                <li key={useId()}>
-                  <MyButton
-                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
-                    btnText={curBtn}
-                    btnFunc={handleScroll}
-                  />
-                </li>
+            {btns.map((curBtn, i) => {
+              return curBtn === "projects" ? (
+                <NavLink to={`/${curBtn}`}>
+                  <li key={i}>
+                    <MyButton
+                      btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                      btnText={curBtn}
+                    />
+                  </li>
+                </NavLink>
+              ) : (
+                <NavLink to={`/${curBtn}`}>
+                  <li key={i}>
+                    <MyButton
+                      btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                      btnText={curBtn}
+                      btnFunc={handleScroll}
+                    />
+                  </li>
+                </NavLink>
               );
             })}
           </ul>
@@ -142,14 +155,26 @@ const Header = () => {
 
         {/* Navigation Links (visible on larger screens) */}
         <nav className="hidden md:flex space-x-6">
-          {btns.map((curBtn) => {
-            return (
-              <MyButton
-                key={useId()}
-                btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in"
-                btnText={curBtn}
-                btnFunc={handleScroll}
-              />
+          {btns.map((curBtn, i) => {
+            return curBtn === "projects" ? (
+              <NavLink to={`/${curBtn}`}>
+                <li key={i}>
+                  <MyButton
+                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                    btnText={curBtn}
+                  />
+                </li>
+              </NavLink>
+            ) : (
+              <NavLink to={`/${curBtn}`}>
+                <li key={i}>
+                  <MyButton
+                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                    btnText={curBtn}
+                    btnFunc={handleScroll}
+                  />
+                </li>
+              </NavLink>
             );
           })}
         </nav>

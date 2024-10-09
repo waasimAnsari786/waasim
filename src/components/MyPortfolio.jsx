@@ -4,20 +4,14 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
 import ContactForm from "./ContactForm";
-import ProjectsSection from "./ProjectsSection";
+// import ProjectsSection from "./ProjectsSection";
 import QualificationSection from "./QualificationSection";
 import MyButton from "./MyButton";
 import AOS from "aos";
 import MySlider from "./MySlider";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export default function MyPortfolio() {
-  const router = createBrowserRouter([
-    {
-      path: "/projects",
-      element: <ProjectsSection />,
-    },
-  ]);
   // i created these 2 arrays for printing my qualifications and experience
   const qualification = [
     {
@@ -65,16 +59,18 @@ export default function MyPortfolio() {
   let arr3 = [8, 9, 10, 11, 15];
 
   useEffect(() => {
-    AOS.init();
+    // Initialize AOS
+    window.AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
   }, []);
 
   return (
     <>
-      <Header />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
-      <RouterProvider router={router} />
+
       <div className="container mx-auto grid grid-cols-3">
         <MySlider sliderEffect="creative" sliderDataArr={arr2} />
         <MySlider sliderEffect="cards" sliderDataArr={arr1} />
