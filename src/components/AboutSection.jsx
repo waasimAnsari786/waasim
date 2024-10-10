@@ -20,6 +20,7 @@ const AboutSection = () => {
         <Text
           myClass="text-4xl font-bold mb-8 text-center capitalize"
           myText="about me"
+          myAni="fade-up"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-rows-4 lg:grid-rows-3 sm:grid-rows-4 grid-rows-1 ">
@@ -66,8 +67,8 @@ const AboutSection = () => {
 
             {/* Download CV Button */}
             <a
-              href="/cv/waasim-cv.pdf" // Add the actual link to your CV
-              download
+              href="/Waasim's CV.pdf"
+              target="_blank" // Add the actual link to your CV
             >
               <MyButton
                 btnClass="bg-gray-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear font-semibold py-2 px-4 flex items-center justify-center rounded-lg mt-4 capitalize"

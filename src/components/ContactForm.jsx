@@ -114,7 +114,11 @@ const ContactForm = () => {
 
   return (
     <section className="w-full py-12 " id="my-cn" ref={contactRef}>
-      <Text myClass="text-4xl font-bold mb-8 text-center" myText="Contact Me" />
+      <Text
+        myClass="text-4xl font-bold mb-8 text-center"
+        myText="Contact Me"
+        myAni="fade-up"
+      />
       <div className="container mx-auto px-6 flex flex-col justify-between md:flex-row gap-3">
         <div className="w-full md:w-1/3" data-aos="fade-up-right">
           {contacts.map((curObj) => {

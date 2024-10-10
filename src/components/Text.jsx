@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Text({ myClass, myText }) {
+export default function Text({ myClass, myText, myAni }) {
   return (
     <>
-      <p className={myClass}>{myText}</p>
+      <p data-aos={myAni} className={myClass}>
+        {myText}
+      </p>
     </>
-  )
+  );
 }

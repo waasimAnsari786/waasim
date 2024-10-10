@@ -84,11 +84,13 @@ export default function MyPortfolio() {
               btnText="qualification"
               btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
               btnFunc={handleQuaExp}
+              btnAni="fade-up"
             />
             <MyButton
               btnText="experience"
               btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
               btnFunc={handleQuaExp}
+              btnAni="fade-up"
             />
           </div>
           <QualificationSection quaArr={QuaExp} />

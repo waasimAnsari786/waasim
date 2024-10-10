@@ -1,37 +1,9 @@
 import React, { useState, useId } from "react";
 import MyButton from "./MyButton";
-import { useElementsRef } from "../context/MainContext";
+import { projectsData } from "../apis/projectsData";
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const { projectsRef } = useElementsRef();
-
-  // Sample project data (you can replace with your own)
-  const projects = [
-    {
-      title: "HTML/CSS Project",
-      description:
-        "A beautiful and responsive webpage built with HTML and CSS.",
-      category: "HTML/CSS",
-      image: "/img/project1.png", // example image path
-      id: useId(),
-    },
-    {
-      title: "JavaScript Project",
-      description: "A dynamic JavaScript project showcasing DOM manipulation.",
-      category: "JavaScript",
-      image: "/img/project2.png",
-      id: useId(),
-    },
-    {
-      title: "React Project",
-      description:
-        "A feature-rich React app with state management and routing.",
-      category: "React",
-      image: "/img/project3.png",
-      id: useId(),
-    },
-  ];
 
   let btns = ["All", "HTML/CSS", "JavaScript", "React"];
 
@@ -40,13 +12,13 @@ const ProjectsSection = () => {
   };
 
   // Filter logic based on selected category
-  const filteredProjects = projects.filter(
+  const filteredProjects = projectsData.filter(
     (project) =>
       selectedCategory === "All" || selectedCategory === project.category
   );
 
   return (
-    <section className="py-16 bg-gray-100" id="my-prs" ref={projectsRef}>
+    <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
@@ -65,7 +37,7 @@ const ProjectsSection = () => {
                     : "bg-slate-300 text-gray-700"
                 }`}
                 btnFunc={handleProjectsFilter}
-                btnAni="zoom-out"
+                // btnAni="zoom-out"
                 key={useId()}
               />
             );
@@ -73,24 +45,29 @@ const ProjectsSection = () => {
         </div>
 
         {/* Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div
-              key={project.id}
+              key={project.liveURL}
               className="bg-white shadow-lg rounded-lg overflow-hidden"
-              data-aos="flip-right"
+              // data-aos="flip-right"
             >
               <img
-                src={project.image}
+                src={project.img}
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
-                  View Project
-                </button>
+                <p className="text-gray-600 mb-4">{project.shortDes}</p>
+                {/* <div className="flex space-x-2">
+                  <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
+                    Code
+                  </button>
+                  <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
+                    View Project
+                  </button>
+                </div> */}
               </div>
             </div>
           ))}

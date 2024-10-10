@@ -20,6 +20,7 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             className="mySwiper"
             autoplay={{ delay: 1500 }}
             loop={true}
+            data-aos="flip-up"
           >
             {sliderDataArr.map((curElem, i) => {
               return (
@@ -60,6 +61,7 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             }}
             modules={[EffectCreative, Autoplay]}
             className="mySwiper5"
+            data-aos="flip-up"
           >
             {sliderDataArr.map((curElem, i) => {
               return (
@@ -90,6 +92,7 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             className="mySwiper"
             autoplay={{ delay: 1500 }}
             loop={true}
+            data-aos="flip-up"
           >
             {sliderDataArr.map((curElem, i) => {
               return (

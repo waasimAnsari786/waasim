@@ -71,6 +71,7 @@ const SkillsSection = () => {
         <Text
           myClass="text-4xl font-bold mb-8 text-center capitalize"
           myText="skills"
+          myAni="fade-up"
         />
 
         <div>{renderSkills(skillsColumnOne)}</div>

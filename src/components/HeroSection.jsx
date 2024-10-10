@@ -62,15 +62,17 @@ const HeroSection = () => {
             {text}
           </p>
 
-          <div className="flex space-x-3 text-2xl">
+          <div className="flex space-x-3 text-lg md:text-2xl">
             <a
-              href=""
-              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 md:p-2 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
+              href="https://www.linkedin.com/in/waasim-ansari-39741b28b/"
+              target="_blank"
+              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
             >
               <FaLinkedinIn />
             </a>
             <a
-              href=""
+              href="https://github.com/waasimAnsari786"
+              target="_blank"
               className="rounded-full bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
             >
               <FaGithub />
