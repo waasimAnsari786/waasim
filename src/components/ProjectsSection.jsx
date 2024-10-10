@@ -1,9 +1,11 @@
 import React, { useState, useId } from "react";
 import MyButton from "./MyButton";
 import { projectsData } from "../apis/projectsData";
+import { useElementsRef } from "../context/MainContext";
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const { projectsRef } = useElementsRef();
 
   let btns = ["All", "HTML/CSS", "JavaScript", "React"];
 
@@ -18,7 +20,7 @@ const ProjectsSection = () => {
   );
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-gray-100" id="my-prs" ref={projectsRef}>
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">

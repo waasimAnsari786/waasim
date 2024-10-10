@@ -12,6 +12,9 @@ const Header = () => {
   // Scroll to specific section
   const handleScroll = (obj) => {
     let targetedText = obj.target.textContent;
+    console.log(targetedText);
+
+    if (!targetedText) return;
     document.title = `Waasim's Portfolio - ${targetedText.toUpperCase()}`;
     if (targetedText === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -129,18 +132,9 @@ const Header = () => {
           {/* Navigation Links */}
           <ul className="space-y-4 mt-10">
             {btns.map((curBtn, i) => {
-              return curBtn === "projects" ? (
+              return (
                 <NavLink to={`/${curBtn}`}>
-                  <li key={i}>
-                    <MyButton
-                      btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
-                      btnText={curBtn}
-                    />
-                  </li>
-                </NavLink>
-              ) : (
-                <NavLink to={`/${curBtn}`}>
-                  <li key={i}>
+                  <li key={curBtn}>
                     <MyButton
                       btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
                       btnText={curBtn}
@@ -156,18 +150,9 @@ const Header = () => {
         {/* Navigation Links (visible on larger screens) */}
         <nav className="hidden md:flex space-x-6">
           {btns.map((curBtn, i) => {
-            return curBtn === "projects" ? (
+            return (
               <NavLink to={`/${curBtn}`}>
-                <li key={i}>
-                  <MyButton
-                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
-                    btnText={curBtn}
-                  />
-                </li>
-              </NavLink>
-            ) : (
-              <NavLink to={`/${curBtn}`}>
-                <li key={i}>
+                <li key={curBtn}>
                   <MyButton
                     btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
                     btnText={curBtn}

@@ -4,12 +4,10 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
 import ContactForm from "./ContactForm";
-// import ProjectsSection from "./ProjectsSection";
 import QualificationSection from "./QualificationSection";
 import MyButton from "./MyButton";
-import AOS from "aos";
 import MySlider from "./MySlider";
-import { Outlet } from "react-router-dom";
+import { projectsData } from "../apis/projectsData";
 
 export default function MyPortfolio() {
   // i created these 2 arrays for printing my qualifications and experience
@@ -72,9 +70,21 @@ export default function MyPortfolio() {
       <SkillsSection />
 
       <div className="container mx-auto grid grid-cols-3">
-        <MySlider sliderEffect="creative" sliderDataArr={arr2} />
-        <MySlider sliderEffect="cards" sliderDataArr={arr1} />
-        <MySlider sliderEffect="cube" sliderDataArr={arr3} />
+        <MySlider
+          sliderEffect="creative"
+          sliderDataArr={projectsData}
+          sliderVal="HTML/CSS"
+        />
+        <MySlider
+          sliderEffect="cards"
+          sliderDataArr={projectsData}
+          sliderVal="JavaScript"
+        />
+        <MySlider
+          sliderEffect="cube"
+          sliderDataArr={projectsData}
+          sliderVal="React"
+        />
       </div>
 
       <section className="bg-gray-100 pb-10">

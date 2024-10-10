@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCards,
@@ -8,7 +8,11 @@ import {
 } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-export default function MySlider({ sliderEffect, sliderDataArr }) {
+export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
+  const htmls = sliderDataArr.filter(
+    (curElem, i) => curElem.category === sliderVal
+  );
+
   if (sliderEffect === "cards") {
     return (
       <>
@@ -20,18 +24,18 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             className="mySwiper"
             autoplay={{ delay: 1500 }}
             loop={true}
-            data-aos="flip-up"
+            // data-aos="flip-up"
           >
-            {sliderDataArr.map((curElem, i) => {
+            {htmls.map((curElem, i) => {
               return (
                 <>
-                  <SwiperSlide className="relative">
-                    <img src="" alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
+                  <SwiperSlide className="relative" key={curElem.liveURL}>
+                    <img src={curElem.img} alt="project image" />
+                    {/* <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
                       <h4>project title {curElem[i]}</h4>
                       <h6>project subtitle {curElem[i]}</h6>
                       <button>view project</button>
-                    </div>
+                    </div> */}
                   </SwiperSlide>
                 </>
               );
@@ -61,18 +65,18 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             }}
             modules={[EffectCreative, Autoplay]}
             className="mySwiper5"
-            data-aos="flip-up"
+            // data-aos="flip-up"
           >
-            {sliderDataArr.map((curElem, i) => {
+            {htmls.map((curElem, i) => {
               return (
                 <>
-                  <SwiperSlide className="relative">
-                    <img src="" alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
+                  <SwiperSlide className="relative" key={curElem.liveURL}>
+                    <img src={curElem.img} alt="project image" />
+                    {/* <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
                       <h4>project title {curElem[i]}</h4>
                       <h6>project subtitle {curElem[i]}</h6>
                       <button>view project</button>
-                    </div>
+                    </div> */}
                   </SwiperSlide>
                 </>
               );
@@ -92,18 +96,18 @@ export default function MySlider({ sliderEffect, sliderDataArr }) {
             className="mySwiper"
             autoplay={{ delay: 1500 }}
             loop={true}
-            data-aos="flip-up"
+            // data-aos="flip-up"
           >
-            {sliderDataArr.map((curElem, i) => {
+            {htmls.map((curElem, i) => {
               return (
                 <>
-                  <SwiperSlide className="relative">
-                    <img src="" alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
+                  <SwiperSlide className="relative" key={curElem.liveURL}>
+                    <img src={curElem.img} alt="project image" />
+                    {/* <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
                       <h4>project title {curElem[i]}</h4>
                       <h6>project subtitle {curElem[i]}</h6>
                       <button>view project</button>
-                    </div>
+                    </div> */}
                   </SwiperSlide>
                 </>
               );
