@@ -63,7 +63,7 @@ const SkillsSection = () => {
 
   return (
     <section
-      className="w-full py-12 text-slate-800"
+      className="w-full py-12 text-slate-800 dark:bg-slate-800 dark:text-white"
       id="my-skills"
       ref={skillsRef}
     >

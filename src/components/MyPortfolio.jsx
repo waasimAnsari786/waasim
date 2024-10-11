@@ -52,10 +52,6 @@ export default function MyPortfolio() {
       : setQuaExp(experience);
   };
 
-  let arr1 = [1, 2, 3];
-  let arr2 = [4, 5, 6, 7];
-  let arr3 = [8, 9, 10, 11, 15];
-
   useEffect(() => {
     // Initialize AOS
     window.AOS.init({
@@ -69,14 +65,14 @@ export default function MyPortfolio() {
       <AboutSection />
       <SkillsSection />
 
-      <section className="pb-12">
+      <section className="py-12 dark:bg-slate-800 dark:text-white">
         <Text
           myClass="text-4xl font-bold mb-8 text-center capitalize"
           myText="projects"
           myAni="fade-up"
         />
         <div
-          className="container mx-auto grid grid-cols-3 gap-10 px-6"
+          className="container mx-auto grid grid-cols-3 gap-10 px-6 "
           data-aos="zoom-in"
         >
           <MySlider
@@ -97,18 +93,18 @@ export default function MyPortfolio() {
         </div>
       </section>
 
-      <section className="bg-gray-100 pb-10">
+      <section className="bg-gray-100 py-12 dark:bg-slate-800 ">
         <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3 px-6">
-          <div className="w-full flex justify-center gap-6">
+          <div className="w-full flex justify-center gap-2">
             <MyButton
               btnText="qualification"
-              btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
+              btnClass="text-3xl text-center capitalize bg-transparent text-slate-800 border-[0.1rem] border-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
               btnFunc={handleQuaExp}
               btnAni="fade-up"
             />
             <MyButton
               btnText="experience"
-              btnClass="text-3xl text-center text-slate-800 capitalize font-bold mb-5"
+              btnClass="text-3xl text-center capitalize bg-transparent text-slate-800 border-[0.1rem] border-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
               btnFunc={handleQuaExp}
               btnAni="fade-up"
             />

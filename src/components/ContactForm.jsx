@@ -113,14 +113,18 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full py-12 " id="my-cn" ref={contactRef}>
+    <section
+      className="w-full py-12 dark:bg-slate-800"
+      id="my-cn"
+      ref={contactRef}
+    >
       <Text
-        myClass="text-4xl font-bold mb-8 text-center"
+        myClass="text-4xl font-bold mb-8 text-center text-slate-800 dark:text-white"
         myText="Contact Me"
         myAni="fade-up"
       />
       <div className="container mx-auto px-6 flex flex-col justify-between md:flex-row gap-3">
-        <div className="w-full md:w-1/3" data-aos="fade-up-right">
+        <div className="w-full md:w-1/3" data-aos="flip-right">
           {contacts.map((curObj) => {
             return (
               <a href={curObj.URL} key={curObj.id} target="_blank">
@@ -137,7 +141,7 @@ const ContactForm = () => {
             );
           })}
         </div>
-        <div className="w-full md:w-2/3" data-aos="fade-up-left">
+        <div className="w-full md:w-2/3" data-aos="flip-left">
           <form className="w-full rounded-lg flex flex-col gap-2">
             <div className="flex flex-col md:flex-row gap-2">
               <Input
@@ -182,7 +186,7 @@ const ContactForm = () => {
             {/* Submit Button */}
             <div className="text-center">
               <button
-                className="bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-linear"
+                className="bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white dark:border-[0.1rem]"
                 type="submit"
                 onClick={handleOnSubmit}
               >

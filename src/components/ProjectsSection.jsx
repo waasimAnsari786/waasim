@@ -22,7 +22,11 @@ const ProjectsSection = () => {
   );
 
   return (
-    <section className="py-16 bg-gray-100" id="my-prs" ref={projectsRef}>
+    <section
+      className="py-16 bg-gray-100 dark:bg-slate-800 dark:text-white"
+      id="my-prs"
+      ref={projectsRef}
+    >
       <div className="container mx-auto px-6">
         {/* Heading */}
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
@@ -35,10 +39,10 @@ const ProjectsSection = () => {
             return (
               <MyButton
                 btnText={curBtn}
-                btnClass={`py-2 px-4 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear rounded-md font-semibold transition ${
+                btnClass={`py-2 px-4 hover:bg-slate-800 hover:text-white transition duration-300 ease-linear rounded-md font-semibold transition border-[0.1rem] dark:border-white dark:hover:bg-white dark:hover:text-slate-800 ${
                   selectedCategory === curBtn
-                    ? "bg-slate-800 text-white"
-                    : "bg-slate-300 text-gray-700"
+                    ? "bg-slate-800 text-white dark:bg-white dark:text-slate-800"
+                    : "bg-slate-300 text-gray-700 dark:bg-transparent dark:text-white"
                 }`}
                 btnFunc={handleProjectsFilter}
                 // btnAni="zoom-out"

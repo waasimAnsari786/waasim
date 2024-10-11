@@ -48,7 +48,7 @@ const HeroSection = () => {
   }, [charIndex, isDeleting, currentLineIndex]);
 
   return (
-    <section className="w-full flex items-center justify-center text-slate-800">
+    <section className="w-full flex items-center justify-center text-slate-800 dark:bg-slate-800 dark:text-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* First child: Typing text content */}
         <div className="flex-1 text-left md:pr-8" data-aos="fade-up">
@@ -66,14 +66,14 @@ const HeroSection = () => {
             <a
               href="https://www.linkedin.com/in/waasim-ansari-39741b28b/"
               target="_blank"
-              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
+              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
             >
               <FaLinkedinIn />
             </a>
             <a
               href="https://github.com/waasimAnsari786"
               target="_blank"
-              className="rounded-full bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear"
+              className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
             >
               <FaGithub />
             </a>

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCreative, EffectCube } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import ProjectCard from "./ProjectCard";
+import { NavLink } from "react-router-dom";
 
 export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
   const htmls = sliderDataArr.filter(
@@ -32,22 +33,16 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
           >
             {htmls.map((curElem, i) => {
               return (
-                <>
-                  <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                  <NavLink to={`/projects/${curElem.title}`}>
                     <ProjectCard
                       img={curElem.img}
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
                     />
-                    {/* <img src={curElem.img} alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
-                      <h4>project title {curElem[i]}</h4>
-                      <h6>project subtitle {curElem[i]}</h6>
-                      <button>view project</button>
-                    </div> */}
-                  </SwiperSlide>
-                </>
+                  </NavLink>
+                </SwiperSlide>
               );
             })}
           </Swiper>
@@ -79,22 +74,16 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
           >
             {htmls.map((curElem, i) => {
               return (
-                <>
-                  <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                  <NavLink to={`/projects/${curElem.title}`}>
                     <ProjectCard
                       img={curElem.img}
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
                     />
-                    {/* <img src={curElem.img} alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
-                      <h4>project title {curElem[i]}</h4>
-                      <h6>project subtitle {curElem[i]}</h6>
-                      <button>view project</button>
-                    </div> */}
-                  </SwiperSlide>
-                </>
+                  </NavLink>
+                </SwiperSlide>
               );
             })}
           </Swiper>
@@ -116,22 +105,16 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
           >
             {htmls.map((curElem, i) => {
               return (
-                <>
-                  <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
+                  <NavLink to={`/projects/${curElem.title}`}>
                     <ProjectCard
                       img={curElem.img}
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
                     />
-                    {/* <img src={curElem.img} alt="project image" />
-                    <div className="w-full h-full opacity-0 hover:opacity-60 transition duration-300 ease-linear">
-                      <h4>project title {curElem[i]}</h4>
-                      <h6>project subtitle {curElem[i]}</h6>
-                      <button>view project</button>
-                    </div> */}
-                  </SwiperSlide>
-                </>
+                  </NavLink>
+                </SwiperSlide>
               );
             })}
           </Swiper>
