@@ -1,5 +1,4 @@
 import React, { useId, useState, useEffect } from "react";
-import Header from "./Header";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
@@ -8,6 +7,7 @@ import QualificationSection from "./QualificationSection";
 import MyButton from "./MyButton";
 import MySlider from "./MySlider";
 import { projectsData } from "../apis/projectsData";
+import Text from "./Text";
 
 export default function MyPortfolio() {
   // i created these 2 arrays for printing my qualifications and experience
@@ -69,26 +69,36 @@ export default function MyPortfolio() {
       <AboutSection />
       <SkillsSection />
 
-      <div className="container mx-auto grid grid-cols-3">
-        <MySlider
-          sliderEffect="creative"
-          sliderDataArr={projectsData}
-          sliderVal="HTML/CSS"
+      <section className="pb-12">
+        <Text
+          myClass="text-4xl font-bold mb-8 text-center capitalize"
+          myText="projects"
+          myAni="fade-up"
         />
-        <MySlider
-          sliderEffect="cards"
-          sliderDataArr={projectsData}
-          sliderVal="JavaScript"
-        />
-        <MySlider
-          sliderEffect="cube"
-          sliderDataArr={projectsData}
-          sliderVal="React"
-        />
-      </div>
+        <div
+          className="container mx-auto grid grid-cols-3 gap-10 px-6"
+          data-aos="zoom-in"
+        >
+          <MySlider
+            sliderEffect="creative"
+            sliderDataArr={projectsData}
+            sliderVal="HTML/CSS"
+          />
+          <MySlider
+            sliderEffect="cards"
+            sliderDataArr={projectsData}
+            sliderVal="JavaScript"
+          />
+          <MySlider
+            sliderEffect="cube"
+            sliderDataArr={projectsData}
+            sliderVal="React"
+          />
+        </div>
+      </section>
 
       <section className="bg-gray-100 pb-10">
-        <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3">
+        <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3 px-6">
           <div className="w-full flex justify-center gap-6">
             <MyButton
               btnText="qualification"

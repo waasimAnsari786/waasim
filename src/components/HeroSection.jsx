@@ -49,7 +49,7 @@ const HeroSection = () => {
 
   return (
     <section className="w-full flex items-center justify-center text-slate-800">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between p-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* First child: Typing text content */}
         <div className="flex-1 text-left md:pr-8" data-aos="fade-up">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">

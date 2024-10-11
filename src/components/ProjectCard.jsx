@@ -1,0 +1,25 @@
+import React, { useEffect } from "react";
+
+export default function ProjectCard({ liveURL, img, title, shortDes }) {
+  useEffect(() => {
+    // Initialize AOS
+    window.AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, []);
+  return (
+    <>
+      <div
+        key={liveURL}
+        className="bg-white shadow-lg rounded-lg overflow-hidden"
+        data-aos="zoom-in"
+      >
+        <img src={img} alt={title} className="w-full h-48 object-cover" />
+        <div className="p-6">
+          <h3 className="text-lg font-semibold mb-2">{title}</h3>
+          <p className="text-gray-600 mb-4">{shortDes}</p>
+        </div>
+      </div>
+    </>
+  );
+}

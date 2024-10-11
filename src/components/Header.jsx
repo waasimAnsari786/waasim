@@ -31,7 +31,7 @@ const Header = () => {
 
   // Function to handle the scroll event for the blur effect
   const handleScrollEffect = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 200) {
       setIsBlurred(true);
     } else {
       setIsBlurred(false);
@@ -63,7 +63,7 @@ const Header = () => {
           : "bg-slate-800 relative" // Solid background
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4 transition-all duration-300 ease-linear">
+      <div className="container mx-auto flex justify-between items-center p-4 transition-all duration-300 ease-linear px-6">
         {/* Logo/Name */}
         <div
           className={`text-2xl font-bold transition-all duration-300 ease-linear ${
@@ -131,12 +131,12 @@ const Header = () => {
 
           {/* Navigation Links */}
           <ul className="space-y-4 mt-10">
-            {btns.map((curBtn, i) => {
+            {btns.map((curBtn) => {
               return (
                 <NavLink to={`/${curBtn}`}>
                   <li key={curBtn}>
                     <MyButton
-                      btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                      btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
                       btnText={curBtn}
                       btnFunc={handleScroll}
                     />
@@ -148,13 +148,13 @@ const Header = () => {
         </nav>
 
         {/* Navigation Links (visible on larger screens) */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-1">
           {btns.map((curBtn, i) => {
             return (
               <NavLink to={`/${curBtn}`}>
                 <li key={curBtn}>
                   <MyButton
-                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-gray-800 transition duration-300 ease-in w-full text-left"
+                    btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
                     btnText={curBtn}
                     btnFunc={handleScroll}
                   />
