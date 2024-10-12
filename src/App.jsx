@@ -4,7 +4,7 @@ import { MainContextProvider } from "./context/MainContext";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ProjectsSection from "./components/ProjectsSection";
 import Layout from "./Layout";
-import ProjectCard2 from "./components/ProjectCard2";
+import DetailedProject from "./components/DetailedProject";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,10 +36,9 @@ function App() {
           path: "contact",
           element: <MyPortfolio />,
         },
-
         {
-          path: "/projects/:project_URL",
-          element: <ProjectCard2 />,
+          path: "projects/:project_URL",
+          element: <DetailedProject />,
         },
       ],
     },
