@@ -8,7 +8,7 @@ export const projectsData = [
     liveURL: "https://waasimansari786.github.io/React-ToDo-App/",
     code: "https://github.com/waasimAnsari786/React-ToDo-App",
     description:
-      "I developed a comprehensive ToDo app using React.js, featuring a fully responsive design with Tailwind CSS to ensure compatibility across all devices. The application allows users to easily add, delete, and update their tasks, enhancing productivity and organization. To ensure data persistence, user tasks are saved in the browser's local storage, allowing them to access their information anytime in the future. This project showcases my skills in creating user-friendly and efficient web applications that prioritize both functionality and aesthetic appeal.",
+      "I developed a comprehensive ToDo app using React.js, featuring a fully responsive design with Tailwind CSS to ensure compatibility across all devices. The application allows users to easily add, delete, and update their tasks, enhancing productivity and organization. To ensure data persistence, user tasks are saved in the browser's local storage, allowing them to access their information anytime in the future. This project showcases my skills in creating user-friendly and efficient web applications that prioritize both functionality and aesthetic appeal",
   },
   {
     img: "/projects images/Screenshot (59).png",
