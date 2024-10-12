@@ -1,6 +1,7 @@
 import React from "react";
 import { projectsData } from "../apis/projectsData";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import MyButton from "./MyButton";
 
 export default function ProjectCard2() {
   const { project_URL } = useParams();
@@ -8,41 +9,44 @@ export default function ProjectCard2() {
     (curObj) => curObj.title === project_URL
   );
 
+  const navigate = useNavigate();
+
   let { img, title, description, liveURL, code } = printableObj[0];
 
   return (
     <>
-      <div className="container mx-auto p-6">
-        <div
-          key={liveURL}
-          className="bg-white shadow-slate-800 shadow-lg rounded-lg flex flex-col gap-3 w-1/2 p-6 "
-        >
-          <div>
+      <section className="h-screen pt-5 dark:bg-slate-800 dark:text-white">
+        <div className="container dark:shadow-slate-950 mx-auto p-6 shadow-gray-400 shadow-lg rounded-lg flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-1/2">
             <img src={img} alt={title} className="h-full rounded-xl" />
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{title}</h3>
-            <p className="text-gray-600 mb-4">{description}</p>
-          </div>
-
-          <div className="flex gap-2">
-            <Link
-              to={liveURL}
-              target="_blank"
-              className="capitalize bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-liner p-3 rounded-lg font-semibold"
-            >
-              view project
-            </Link>
-            <Link
-              to={code}
-              target="_blank"
-              className="capitalize bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-liner p-3 rounded-lg font-semibold"
-            >
-              code
-            </Link>
+          <div className="w-full md:w-1/2">
+            <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+            <p className="text-gray-600 dark:text-white mb-4">{description}</p>
+            <div className="flex  gap-2">
+              <Link
+                to={liveURL}
+                target="_blank"
+                className="capitalize bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-liner p-3 rounded-lg font-semibold dark:bg-transparent border-[0.1rem] dark:text-white border-white dark:hover:bg-white dark:hover:text-slate-800"
+              >
+                live preview
+              </Link>
+              <Link
+                to={code}
+                target="_blank"
+                className="capitalize bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-liner p-3 rounded-lg font-semibold dark:bg-transparent border-[0.1rem] dark:text-white border-white dark:hover:bg-white dark:hover:text-slate-800"
+              >
+                repository
+              </Link>
+              <MyButton
+                btnFunc={() => navigate(-1)}
+                btnText="go back"
+                btnClass="capitalize bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white transition duration-300 ease-liner p-3 rounded-lg font-semibold dark:bg-transparent border-[0.1rem] dark:text-white border-white dark:hover:bg-white dark:hover:text-slate-800"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
