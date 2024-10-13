@@ -8,8 +8,11 @@ import MyButton from "./MyButton";
 import MySlider from "./MySlider";
 import { projectsData } from "../apis/projectsData";
 import Text from "./Text";
+import { useElementsRef } from "../context/MainContext";
+import { NavLink } from "react-router-dom";
 
 export default function MyPortfolio() {
+  const { projectsRef } = useElementsRef();
   // i created these 2 arrays for printing my qualifications and experience
   const qualification = [
     {
@@ -65,7 +68,11 @@ export default function MyPortfolio() {
       <AboutSection />
       <SkillsSection />
 
-      <section className="py-12 dark:bg-slate-800 dark:text-white">
+      <section
+        className="py-12 dark:bg-slate-800 dark:text-white flex flex-col justify-center items-center"
+        ref={projectsRef}
+        id="my-prs"
+      >
         <Text
           myClass="text-4xl font-bold mb-8 text-center capitalize"
           myText="projects"
@@ -91,21 +98,17 @@ export default function MyPortfolio() {
             sliderVal="React"
           />
         </div>
+
+        <NavLink to="/projects" className="mt-10">
+          <MyButton btnText="load more" />
+        </NavLink>
       </section>
 
       <section className="bg-gray-100 py-12 dark:bg-slate-800 ">
         <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3 px-6">
           <div className="w-full flex justify-center gap-2" data-aos="fade-up">
-            <MyButton
-              btnText="qualification"
-              btnClass="bg-gray-300 text-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 ease-linear font-semibold py-2 px-4 flex items-center justify-center rounded-lg mt-4 capitalize border-[0.1rem] border-transparent dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
-              btnFunc={handleQuaExp}
-            />
-            <MyButton
-              btnText="experience"
-              btnClass="bg-gray-300 text-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 ease-linear font-semibold py-2 px-4 flex items-center justify-center rounded-lg mt-4 capitalize border-[0.1rem] border-transparent dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
-              btnFunc={handleQuaExp}
-            />
+            <MyButton btnText="qualification" btnFunc={handleQuaExp} />
+            <MyButton btnText="experience" btnFunc={handleQuaExp} />
           </div>
           <QualificationSection quaArr={QuaExp} />
         </div>

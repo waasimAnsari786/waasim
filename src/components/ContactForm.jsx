@@ -6,6 +6,7 @@ import Text from "./Text";
 import Input from "./Input";
 import emailjs from "@emailjs/browser";
 import { useElementsRef } from "../context/MainContext";
+import MyButton from "./MyButton";
 
 const ContactForm = () => {
   const { contactRef } = useElementsRef();
@@ -184,14 +185,8 @@ const ContactForm = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="text-center">
-              <button
-                className="bg-slate-300 text-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white dark:border-[0.1rem]"
-                type="submit"
-                onClick={handleOnSubmit}
-              >
-                Send Message
-              </button>
+            <div className="flex justify-center">
+              <MyButton btnFunc={handleOnSubmit} btnText="Send Message" />
             </div>
           </form>
         </div>

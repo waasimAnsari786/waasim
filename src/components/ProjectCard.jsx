@@ -11,7 +11,7 @@ export default function ProjectCard({ liveURL, img, title, shortDes }) {
     <>
       <div
         key={liveURL}
-        className="bg-white  rounded-lg overflow-hidden"
+        className="bg-white h-96 rounded-lg overflow-hidden"
         data-aos="zoom-in"
       >
         <img

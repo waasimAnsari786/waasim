@@ -23,9 +23,10 @@ const Header = () => {
 
   const handleScroll = (obj) => {
     let targetedText = obj.target.textContent;
-
-    if (!targetedText) return;
     document.title = `Waasim's Portfolio - ${targetedText.toUpperCase()}`;
+
+    if (!aboutRef.current || !skillsRef.current || !contactRef.current) return;
+
     if (targetedText === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (targetedText === "skills") {
@@ -146,14 +147,24 @@ const Header = () => {
             {/* Navigation Links */}
             <ul className="space-y-4 mt-10">
               {btns.map((curBtn) => {
-                return (
+                return curBtn === "projects" ? (
+                  <li key={curBtn}>
+                    <button
+                      onClick={handleScroll}
+                      className="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
+                    >
+                      {curBtn}
+                    </button>
+                  </li>
+                ) : (
                   <NavLink to={`/${curBtn}`} key={curBtn}>
                     <li>
-                      <MyButton
-                        btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
-                        btnText={curBtn}
-                        btnFunc={handleScroll}
-                      />
+                      <button
+                        onClick={handleScroll}
+                        className="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
+                      >
+                        {curBtn}
+                      </button>
                     </li>
                   </NavLink>
                 );
@@ -164,15 +175,25 @@ const Header = () => {
           {/* Navigation Links (visible on larger screens) */}
           <nav className="hidden md:block ">
             <ul className="flex space-x-3">
-              {btns.map((curBtn, i) => {
-                return (
+              {btns.map((curBtn) => {
+                return curBtn === "projects" ? (
+                  <li key={curBtn}>
+                    <button
+                      onClick={handleScroll}
+                      className="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
+                    >
+                      {curBtn}
+                    </button>
+                  </li>
+                ) : (
                   <NavLink to={`/${curBtn}`} key={curBtn}>
                     <li>
-                      <MyButton
-                        btnClass="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
-                        btnText={curBtn}
-                        btnFunc={handleScroll}
-                      />
+                      <button
+                        onClick={handleScroll}
+                        className="capitalize text-lg bg-transparent py-[0.1rem] px-2 rounded-md hover:bg-white hover:text-slate-800 transition duration-300 ease-in"
+                      >
+                        {curBtn}
+                      </button>
                     </li>
                   </NavLink>
                 );
