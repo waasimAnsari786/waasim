@@ -21,7 +21,7 @@ export default function DetailedProject() {
           <div className="w-full md:w-1/2">
             <h3 className="text-2xl font-semibold mb-2">{title}</h3>
             <p className="text-gray-600 dark:text-white mb-4">{description}</p>
-            <div className="flex  gap-2">
+            <div className="flex flex-wrap gap-2">
               <Link
                 to={liveURL}
                 target="_blank"

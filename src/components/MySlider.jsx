@@ -13,7 +13,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
   if (sliderEffect === "cards") {
     return (
       <>
-        <div>
+        <div className="rounded-lg shadow-gray-400 shadow-xl min-h-1">
           <Swiper
             grabCursor={true}
             effect={"creative"}
@@ -52,7 +52,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
   } else if (sliderEffect === "creative") {
     return (
       <>
-        <div className="w-full">
+        <div className="rounded-lg shadow-gray-400 shadow-xl min-h-1">
           <Swiper
             grabCursor={true}
             effect={"creative"}

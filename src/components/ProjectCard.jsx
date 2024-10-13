@@ -11,10 +11,14 @@ export default function ProjectCard({ liveURL, img, title, shortDes }) {
     <>
       <div
         key={liveURL}
-        className="bg-white shadow-lg rounded-lg overflow-hidden"
+        className="bg-white  rounded-lg overflow-hidden"
         data-aos="zoom-in"
       >
-        <img src={img} alt={title} className="w-full h-48 object-cover" />
+        <img
+          src={img}
+          alt={title}
+          className="w-full h-60 lg:h-48 object-cover"
+        />
         <div className="p-6">
           <h3 className="text-lg font-semibold mb-2 text-slate-800">{title}</h3>
           <p className="text-slate-500 mb-4">{shortDes}</p>

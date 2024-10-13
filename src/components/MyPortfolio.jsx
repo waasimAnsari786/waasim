@@ -72,7 +72,7 @@ export default function MyPortfolio() {
           myAni="fade-up"
         />
         <div
-          className="container mx-auto grid grid-cols-3 gap-10 px-6 "
+          className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 "
           data-aos="zoom-in"
         >
           <MySlider
@@ -95,18 +95,16 @@ export default function MyPortfolio() {
 
       <section className="bg-gray-100 py-12 dark:bg-slate-800 ">
         <div className="container mx-auto flex flex-col justify-center items-center gap-5 lg:gap-3 px-6">
-          <div className="w-full flex justify-center gap-2">
+          <div className="w-full flex justify-center gap-2" data-aos="fade-up">
             <MyButton
               btnText="qualification"
-              btnClass="text-3xl text-center capitalize bg-transparent text-slate-800 border-[0.1rem] border-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
+              btnClass="bg-gray-300 text-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 ease-linear font-semibold py-2 px-4 flex items-center justify-center rounded-lg mt-4 capitalize border-[0.1rem] border-transparent dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
               btnFunc={handleQuaExp}
-              btnAni="fade-up"
             />
             <MyButton
               btnText="experience"
-              btnClass="text-3xl text-center capitalize bg-transparent text-slate-800 border-[0.1rem] border-slate-800 hover:bg-slate-800 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
+              btnClass="bg-gray-300 text-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 ease-linear font-semibold py-2 px-4 flex items-center justify-center rounded-lg mt-4 capitalize border-[0.1rem] border-transparent dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
               btnFunc={handleQuaExp}
-              btnAni="fade-up"
             />
           </div>
           <QualificationSection quaArr={QuaExp} />
