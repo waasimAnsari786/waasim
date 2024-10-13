@@ -3,6 +3,8 @@ import MyButton from "./MyButton";
 import { useElementsRef } from "../context/MainContext";
 import { Link, NavLink } from "react-router-dom";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Header = () => {
   const { aboutRef, skillsRef, projectsRef, contactRef } = useElementsRef();
@@ -119,7 +121,7 @@ const Header = () => {
 
           {/* Off-canvas mobile navigation */}
           <nav
-            className={`fixed top-0 left-0 h-screen w-64 bg-slate-800 p-6 transition-transform duration-500 ease-in-out transform ${
+            className={`fixed top-0 left-0 h-screen w-64 bg-slate-800 p-6 transition-transform duration-500 ease-in-out transform flex flex-col justify-center items-center ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } md:hidden z-60`}
           >
@@ -144,8 +146,18 @@ const Header = () => {
               </svg>
             </button>
 
+            <Link to="/">
+              <img
+                src="/img/download.png"
+                alt="Logo"
+                className={`transition-all duration-300 ease-linear ${
+                  isBlurred ? "h-10" : "h-16"
+                }`} // Shrinks the logo on scroll
+              />
+            </Link>
+
             {/* Navigation Links */}
-            <ul className="space-y-4 mt-10">
+            <ul className=" mt-10 text-center">
               {btns.map((curBtn) => {
                 return curBtn === "projects" ? (
                   <li key={curBtn}>
@@ -170,6 +182,23 @@ const Header = () => {
                 );
               })}
             </ul>
+
+            <div className="flex space-x-3 mt-10 ">
+              <a
+                href="https://www.linkedin.com/in/waasim-ansari-39741b28b/"
+                target="_blank"
+                className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href="https://github.com/waasimAnsari786"
+                target="_blank"
+                className="rounded-[100%] bg-slate-800 hover:bg-transparent text-white hover:text-slate-800 p-4 border-[0.1vh] border-slate-800 hover:border-slate-800 transition duration-300 ease-linear dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:border-white"
+              >
+                <FaGithub />
+              </a>
+            </div>
           </nav>
 
           {/* Navigation Links (visible on larger screens) */}
