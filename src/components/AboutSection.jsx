@@ -41,28 +41,28 @@ const AboutSection = () => {
             data-aos="flip-up"
           >
             <p className="text-lg text-gray-700 mb-4 dark:text-white">
-              Hello, I'm <strong>Waasim Ansari</strong>, a passionate{" "}
-              <strong>Front End Developer</strong>. I specialize in{" "}
-              <strong>HTML</strong>, <strong>CSS</strong>,{" "}
-              <strong>JavaScript</strong>, <strong>Bootstrap</strong>,{" "}
-              <strong>Tailwind CSS</strong>, and <strong>React</strong>.
+              I am a passionate Front-End Developer with one year of industry
+              experience, specializing in building responsive and user-friendly
+              web applications. My journey began through self-learning, fueled
+              by numerous YouTube tutorials and online platforms that empowered
+              me to master the essentials of web development.
             </p>
 
             <p className="text-lg text-gray-700 mb-4 dark:text-white">
-              With <strong>1 year of experience working from home</strong>, I
-              have <strong>not worked in any formal organization</strong>.
-              Instead, I've gained all of my experience through{" "}
-              <strong>self-learning</strong> and developing several projects by
-              following tutorials on <strong>YouTube</strong> and other online
-              platforms. My journey has been fueled by my drive to constantly
-              learn and grow, exploring new technologies that have the potential
-              to shape the future of the web and beyond.{" "}
+              I have honed my skills in HTML, CSS, Bootstrap, Tailwind CSS,
+              JavaScript, and React. My hands-on experience includes developing
+              various projects, both independently and for organizations, which
+              has enhanced my technical abilities and provided valuable insights
+              into real-world applications.
             </p>
 
             <p className="text-lg text-gray-700 mb-6 dark:text-white">
-              I am dedicated to honing my skills and staying up-to-date with the
-              latest tools and techniques in the ever-evolving field of
-              front-end development.
+              In addition to my foundational skills, I am adept at leveraging
+              tools like ChatGPT to generate efficient and optimized code,
+              further streamlining my development process. I am committed to
+              continuous learning and improvement, and I am excited about the
+              opportunities to create impactful web solutions that meet user
+              needs.
             </p>
 
             {/* Download CV Button */}

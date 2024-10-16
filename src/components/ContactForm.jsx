@@ -55,6 +55,15 @@ const ContactForm = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
+    for (const curKey in InpObj) {
+      if (InpObj[curKey] === "") {
+        alert(
+          `Your ${curKey}'s field is empty! You cannot send the form without filling out all the fields.`
+        );
+        return; // Stop form submission if any field is empty
+      }
+    }
+
     // Validation checks
     if (!validateUserName(InpObj.name)) {
       alert(
@@ -108,7 +117,6 @@ const ContactForm = () => {
         alert(
           "Maybe my submission has expired. You can contact me on my LinkedIn or email: waasimansari92@gmail.com"
         );
-        console.log(err);
       });
   };
 
