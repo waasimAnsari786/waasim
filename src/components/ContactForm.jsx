@@ -30,13 +30,11 @@ const ContactForm = () => {
   };
 
   const validatePhoneNum = (phoneNum) => {
-    return /^(03[0-4][\d](?:[\s]|[\W_]|)[\d]{7})|(\+92(?:[\s]|[\W_]|)3[0-4][\d](?:[\s]|[\W_]|)[\d]{7})$/.test(
-      phoneNum
-    );
+    return /^(\+92|0)3[0-4]\d(?:[\s|\-]*)\d{7}$/.test(phoneNum);
   };
 
   const validateMail = (mail) => {
-    return /^[\da-zA-Z]+(?:[+%._-][\da-zA-Z]+)*@(?:[-.])*[a-zA-Z\d]+(?:[-])*\.[A-Za-z]{2,}$/.test(
+    return /^[a-zA-Z0-9]+(?:[._%+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:-[a-zA-Z\d]+)*\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(
       mail
     );
   };
@@ -110,6 +108,7 @@ const ContactForm = () => {
         alert(
           "Maybe my submission has expired. You can contact me on my LinkedIn or email: waasimansari92@gmail.com"
         );
+        console.log(err);
       });
   };
 
