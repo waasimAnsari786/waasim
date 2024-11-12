@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { projectsRef } = useElementsRef();
 
-  let btns = ["All", "HTML/CSS", "JavaScript", "React"];
+  let btns = ["All", "React", "JavaScript", "HTML/CSS"];
 
   const handleProjectsFilter = (val) => {
     setSelectedCategory(val.target.textContent);
@@ -64,29 +64,6 @@ const ProjectsSection = () => {
                 key={project.liveURL}
               />
             </NavLink>
-            // <div
-            //   key={project.liveURL}
-            //   className="bg-white shadow-lg rounded-lg overflow-hidden"
-            //   // data-aos="flip-right"
-            // >
-            //   <img
-            //     src={project.img}
-            //     alt={project.title}
-            //     className="w-full h-48 object-cover"
-            //   />
-            //   <div className="p-6">
-            //     <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-            //     <p className="text-gray-600 mb-4">{project.shortDes}</p>
-            //     <div className="flex space-x-2">
-            //       <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
-            //         Code
-            //       </button>
-            //       <button className="bg-slate-300 text-slate-800 py-2 px-4 rounded-md hover:bg-slate-800 hover:text-white transition duration-300 ease-linear">
-            //         View Project
-            //       </button>
-            //     </div>
-            //   </div>
-            // </div>
           ))}
         </div>
       </div>

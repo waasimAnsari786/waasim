@@ -1,5 +1,16 @@
 export const projectsData = [
   {
+    img: "/projects images/blogging app.png",
+    category: "React",
+    title: "Appwrite Blog App",
+    shortDes:
+      "Developed a responsive blogging app with React.js, using Appwrite for backend, TinyMCE for rich text, Redux Toolkit for state, and React-Hook-Form for forms.",
+    liveURL: "https://waasim-blogging-app.netlify.app/",
+    code: "https://github.com/waasimAnsari786/blogging-app",
+    description:
+      "This project is a modern blogging application built with React.js and Appwrite as the backend-as-a-service. I implemented React-Hook-Form to simplify form management for features like user registration, login, and blog post creation and updates. A key highlight is the integration of TinyMCE, enabling users to add rich formatting to both short and long descriptions. The editor’s HTML output is parsed into text using HTML React Parser for a smooth user interface. To ensure efficient global state management, I utilized Redux Toolkit, making data handling across components easy and responsive. The app also features React Icons to enhance UI appeal and React Toastify to provide feedback with attractive toast animations. For seamless page transitions, I utilized React Router DOM for dynamic routing, and React Spinners were added to keep users engaged during loading states.",
+  },
+  {
     img: "/projects images/Screenshot (7).png",
     category: "React",
     title: "React ToDo App",
