@@ -4,6 +4,7 @@ import { Autoplay, EffectCreative, EffectCube } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import ProjectCard from "./ProjectCard";
 import { NavLink } from "react-router-dom";
+import Text from "./Text";
 
 export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
   const htmls = sliderDataArr.filter(
@@ -12,7 +13,11 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
 
   if (sliderEffect === "cards") {
     return (
-      <>
+      <div>
+        <Text
+          myClass="text-2xl font-bold my-5 text-center capitalize"
+          myText="JavaScript"
+        />
         <div className="rounded-lg shadow-gray-400 shadow-xl dark:shadow-slate-950">
           <Swiper
             grabCursor={true}
@@ -31,7 +36,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             loop={true}
             className="mySwiper"
           >
-            {htmls.map((curElem, i) => {
+            {htmls.map((curElem) => {
               return (
                 <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
                   <NavLink to={`/projects/${curElem.title}`}>
@@ -47,11 +52,15 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             })}
           </Swiper>
         </div>
-      </>
+      </div>
     );
   } else if (sliderEffect === "creative") {
     return (
-      <>
+      <div>
+        <Text
+          myClass="text-2xl font-bold my-5 text-center capitalize"
+          myText="HTML/CSS"
+        />
         <div className="rounded-lg shadow-gray-400 shadow-xl dark:shadow-slate-950">
           <Swiper
             grabCursor={true}
@@ -72,7 +81,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             className="mySwiper5"
             // data-aos="flip-up"
           >
-            {htmls.map((curElem, i) => {
+            {htmls.map((curElem) => {
               return (
                 <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
                   <NavLink to={`/projects/${curElem.title}`}>
@@ -88,11 +97,15 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             })}
           </Swiper>
         </div>
-      </>
+      </div>
     );
   } else if (sliderEffect === "cube") {
     return (
-      <>
+      <div>
+        <Text
+          myClass="text-2xl font-bold my-5 text-center capitalize"
+          myText="React"
+        />{" "}
         <div className="w-full">
           <Swiper
             effect={"cube"}
@@ -103,7 +116,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             loop={true}
             // data-aos="flip-up"
           >
-            {htmls.map((curElem, i) => {
+            {htmls.map((curElem) => {
               return (
                 <SwiperSlide className="rounded-xl" key={curElem.liveURL}>
                   <NavLink to={`/projects/${curElem.title}`}>
@@ -119,7 +132,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             })}
           </Swiper>
         </div>
-      </>
+      </div>
     );
   }
 }
