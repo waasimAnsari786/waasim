@@ -23,7 +23,7 @@ const ProjectsSection = () => {
 
   return (
     <section
-      className="py-16 bg-gray-100 dark:bg-slate-800 dark:text-white"
+      className="py-16 bg-gray-100 dark:bg-slate-800 dark:text-white mt-20"
       id="my-prs"
       ref={projectsRef}
     >
@@ -61,6 +61,7 @@ const ProjectsSection = () => {
                 title={project.title}
                 img={project.img}
                 shortDes={project.shortDes}
+                bgColor={project.bgColor && project.bgColor}
                 key={project.liveURL}
               />
             </NavLink>

@@ -17,7 +17,7 @@ export default function MyPortfolio() {
   const qualification = [
     {
       title: "matriculation",
-      year: "Sindh Board , 2009 - 2021",
+      year: "Sindh Board , 2020 - 2021",
       description:
         "I completed my matriculation with a commendable score of 74.58% in the Faculty of Biology.",
       id: useId(),

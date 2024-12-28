@@ -13,10 +13,14 @@ export default function DetailedProject() {
   let { img, title, description, liveURL, code } = printableObj[0];
   return (
     <>
-      <section className="h-screen pt-5 dark:bg-slate-800 dark:text-white">
+      <section className="pt-32 dark:bg-slate-800 dark:text-white">
         <div className="container dark:shadow-slate-950 mx-auto p-6 shadow-gray-400 shadow-lg rounded-lg flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
-            <img src={img} alt={title} className="h-full rounded-xl" />
+            <img
+              src={img}
+              alt={title}
+              className="h-full rounded-xl bg-amber-800"
+            />
           </div>
           <div className="w-full md:w-1/2">
             <h3 className="text-2xl font-semibold mb-2">{title}</h3>

@@ -1,5 +1,17 @@
 export const projectsData = [
   {
+    img: "/projects images/dualcart2.png",
+    category: "React",
+    title: "DualCart",
+    shortDes:
+      "A dynamic e-commerce platform where buyers can add to cart, place orders, and track them, while sellers manage categories, products, and orders with a dashboard featuring CRUD functionality and activity charts.",
+    liveURL: "https://dualcart.netlify.app/",
+    code: "https://github.com/waasimAnsari786/react-e-commerce.git",
+    description:
+      "This e-commerce platform offers a comprehensive solution for both buyers and sellers, designed to enhance user experience and streamline operations.  A user-friendly interface allows buyers to explore products, add items to their cart, and place orders effortlessly. Buyers can track their orders and manage their shopping experience with ease.  Sellers access a feature-rich dashboard for performing CRUD operations on categories, products, and orders.  Interactive charts provide sellers with valuable insights into their activities, including sales trends and order statuses, helping them make informed decisions. With a sleek design and intuitive functionality, this e-commerce store ensures a seamless and efficient experience for both buyers and sellers. It's an ideal showcase of my skills in building dynamic web applications with rich functionality.",
+    bgColor: "bg-amber-800",
+  },
+  {
     img: "/projects images/blogging app.png",
     category: "React",
     title: "Appwrite Blog App",

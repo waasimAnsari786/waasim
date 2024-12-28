@@ -67,7 +67,7 @@ const AboutSection = () => {
 
             {/* Download CV Button */}
             <a
-              href="/waasim ansari resume.pdf"
+              href="/Waasim Resume.pdf"
               target="_blank" // Add the actual link to your CV
             >
               <MyButton

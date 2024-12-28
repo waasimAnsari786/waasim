@@ -48,7 +48,7 @@ const HeroSection = () => {
   }, [charIndex, isDeleting, currentLineIndex]);
 
   return (
-    <section className="w-full flex items-center justify-center text-slate-800 dark:bg-slate-800 dark:text-white">
+    <section className="w-full flex items-center justify-center text-slate-800 dark:bg-slate-800 dark:text-white mt-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* First child: Typing text content */}
         <div className="flex-1 text-left md:pr-8" data-aos="fade-up">

@@ -45,6 +45,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
+                      bgColor={curElem.bgColor && curElem.bgColor}
                     />
                   </NavLink>
                 </SwiperSlide>
@@ -90,6 +91,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
+                      bgColor={curElem.bgColor && curElem.bgColor}
                     />
                   </NavLink>
                 </SwiperSlide>
@@ -114,6 +116,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
             className="mySwiper"
             autoplay={{ delay: 1500 }}
             loop={true}
+
             // data-aos="flip-up"
           >
             {htmls.map((curElem) => {
@@ -125,6 +128,7 @@ export default function MySlider({ sliderEffect, sliderDataArr, sliderVal }) {
                       title={curElem.title}
                       liveURL={curElem.liveURL}
                       shortDes={curElem.shortDes}
+                      bgColor={curElem.bgColor && curElem.bgColor}
                     />
                   </NavLink>
                 </SwiperSlide>
